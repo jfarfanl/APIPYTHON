@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráfico de Datos en Tiempo Real</title>
+    <script>
+        function actualizarGrafico() {
+            var img = document.getElementById("grafico");
+            img.src = img.src + '?' + new Date().getTime(); // Agrega una marca de tiempo para evitar el caché
+            setTimeout(actualizarGrafico, 1000); // Actualiza cada segundo (1000 ms)
+        }
+        window.onload = function() {
+            actualizarGrafico();
+        };
+    </script>
+</head>
+<body>
+    <h1>Gráfico de Datos en Tiempo Real</h1>
+    <img id="grafico" src="{{ grafico }}" alt="Gráfico de Datos">
+</body>
+</html>
