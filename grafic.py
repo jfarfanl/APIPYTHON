@@ -13,7 +13,7 @@ def mostrar_archivo():
         response = requests.get(url_archivo)
         if response.status_code == 200:
             contenido = response.text
-            return render_template('index.html', contenido=contenido)
+            return render_template('https://unlike-travel.000webhostapp.com/medidor/lala.html', contenido=contenido)
         else:
             return "Error al obtener el archivo: Código de estado " + str(response.status_code)
     except requests.RequestException as e:
